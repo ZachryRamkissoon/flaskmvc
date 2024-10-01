@@ -37,6 +37,20 @@ def create_user_command(username, password):
     create_user(username, password)
     print(f'{username} created!')
 
+@user_cli.command("viewCompetitions", help="View all Competitions")
+def viewAllCompetitions():
+    competitions = get_all_competitions()
+    print(competitions)
+# flask student viewCompetitions
+
+@user_cli.command("viewCompetitionResults", help="View single competition results")
+@click.argument("username", default="rob")
+def viewStudentResults():
+    user = get_user_by_username(username)
+    results = get_student_results(user.id)
+    print(results)
+# flask student viewResults bob
+
 # this command will be : flask user create bob bobpass
 
 @user_cli.command("list", help="Lists users in the database")
