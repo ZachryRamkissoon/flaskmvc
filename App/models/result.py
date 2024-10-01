@@ -6,7 +6,7 @@ class Result(db.Model):
     competition_id = db.Column(db.Integer, db.ForeignKey("competition.competition_id"), nullable=False)
     score = db.Column(db.Float, nullable=False)
 
-    def _init_(self, student_id, competition_id, score, rank):
+    def _init_(self, student_id, competition_id, score):
         self.student_id = student_id
         self.competition_id = competition_id
         self.score = score

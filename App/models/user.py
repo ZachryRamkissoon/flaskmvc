@@ -13,7 +13,7 @@ class User(db.Model):
 
     def get_json(self):
         return{
-            'id': self.id,
+            'id': self.student_id,
             'username': self.username
         }
 
